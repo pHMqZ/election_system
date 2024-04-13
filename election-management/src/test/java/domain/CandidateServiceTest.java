@@ -38,7 +38,7 @@ class CandidateServiceTest {
        List<Candidate> candidates = Instancio.stream(Candidate.class).limit(10).toList();
 
         when(repository.findAll()).thenReturn(candidates);
-        List<Candidate> result = repository.findAll();
+        List<Candidate> result = service.findAll();
 
         verify(repository).findAll();
         verifyNoMoreInteractions(repository);
